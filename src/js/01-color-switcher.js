@@ -14,7 +14,7 @@ btnStart.addEventListener('click', () => {
   timerId = setInterval(() => {
     body.style.backgroundColor = getRandomHexColor();
   }, 1000);
-  console.log("The color is changing!")
+  console.log('The color is changing!');
 });
 
 btnStop.addEventListener('click', () => {
