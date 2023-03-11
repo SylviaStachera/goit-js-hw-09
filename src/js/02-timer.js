@@ -18,10 +18,9 @@ const options = {
   defaultDate: date,
   minuteIncrement: 1,
   onClose(selectedDates) {
-    // console.log(selectedDates[0].getTime());
     if (selectedDates[0].getTime() < date.getTime()) {
       Notiflix.Notify.warning('Please choose a date in the future');
-      //window.alert('Please choose a date in the future');
+
       btnStart.setAttribute('disabled', '');
     }
 
@@ -31,9 +30,8 @@ const options = {
   },
 };
 flatpickr(dataText, options);
-//================ODLICZANIE==============================
-//Aby obliczyć wartości użyj gotowej funkcji convertMs, gdzie ms - różnica między końcową i aktualną datą w milisekundach.
 
+//================ODLICZANIE==============================
 function convertMs(ms) {
   // Number of milliseconds per unit of time
   const second = 1000;
@@ -61,8 +59,6 @@ btnStart.addEventListener('click', () => {
     btnStart.setAttribute('disabled', '');
 
     let ms = new Date(dataText.value) - new Date();
-    // console.log(new Date(dataText.value));
-    //console.log(new Date());
 
     if (ms >= 0) {
       let msObject = convertMs(ms);

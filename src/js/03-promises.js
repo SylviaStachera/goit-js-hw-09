@@ -4,17 +4,15 @@ const btn = document.querySelector('button[type=submit]');
 const delay = document.querySelector('input[name=delay]');
 const step = document.querySelector('input[name=step]');
 const amount = document.querySelector('input[name=amount]');
-//console.log(btn);
+
 //========================================================
 function createPromise(position, delay) {
   const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
       const shouldResolve = Math.random() > 0.3;
       if (shouldResolve) {
-        //console.log('Fulfill');
         resolve({ position, delay });
       } else {
-        //console.log('Reject');
         reject({ position, delay });
       }
     }, delay);
